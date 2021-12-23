@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        file-extension: yaml
+    config:
+      allow-override: true
+  application:
+    name: clientb
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+dubbo:
+  scan:
+    base-packages: com.light.cloud.clientb.service
+  protocol:
+    port: 20881
+    name: dubbo
